@@ -1,4 +1,3 @@
-import React from 'react';
 import Banner from './components/Banner/Banner';
 import ScanForm from './components/ScanForm/ScanForm';
 import PromoCard from './components/PromoCard/PromoCard';
