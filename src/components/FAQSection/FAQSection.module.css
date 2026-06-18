@@ -1,0 +1,173 @@
+/* FAQSection.module.css */
+.section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 48px 0;
+  line-height: 1.2;
+}
+
+.titleDark {
+  color: #1A1A2E;
+}
+
+.titlePurple {
+  color: #6C63FF; /* brand purple */
+}
+
+/* Accordion Container */
+.accordion {
+  width: 100%;
+  border-top: 1px solid #E5E5E5;
+}
+
+.faqItem {
+  width: 100%;
+  border-bottom: 1px solid #E5E5E5;
+  transition: background-color 0.25s ease;
+}
+
+/* Add subtle light background on expanded state */
+.faqItem.active {
+  background-color: #F9F9F9;
+}
+
+/* Header button click area */
+.headerBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 24px 16px;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  transition: color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.question {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1A1A2E;
+  padding-right: 24px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.icon {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1A1A2E;
+  user-select: none;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Interaction Hovers */
+.headerBtn:hover .question {
+  color: #6C63FF;
+}
+.headerBtn:hover .icon {
+  color: #6C63FF;
+}
+
+/* Expandable Answer Box */
+.answerWrapper {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.answer {
+  padding: 0 16px 24px 16px;
+  box-sizing: border-box;
+}
+
+.answer p {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+/* Skeleton Loading styles */
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.skeletonRow {
+  height: 60px;
+  background: linear-gradient(90deg, #F3F3F3 25%, #E5E5E5 50%, #F3F3F3 75%);
+  background-size: 200% 100%;
+  animation: faq-shimmer 1.5s infinite;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+
+@keyframes faq-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.errorMsg {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #EF4444;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* ========================================================
+   Responsive Media Queries
+   ======================================================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .headerBtn {
+    padding: 20px 12px;
+  }
+
+  .question {
+    font-size: 15px;
+  }
+
+  .answer {
+    padding: 0 12px 20px 12px;
+  }
+
+  .answer p {
+    font-size: 13.5px;
+  }
+}

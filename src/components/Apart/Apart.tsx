@@ -123,11 +123,11 @@ export const Apart: React.FC = () => {
                 </div>
 
                 {/* Expanded details row */}
-                {isExpanded && (
+                {/* {isExpanded && (
                   <div className="whistle-apart-details-panel">
                     {row.detail}
                   </div>
-                )}
+                )} */}
               </div>
             );
           })}

@@ -4,9 +4,14 @@ import f1Img from '../../assets/f1.svg';
 import f2Img from '../../assets/f2.svg';
 import f3Img from '../../assets/f3.svg';
 import f4Img from '../../assets/f4.svg';
+import f5Img from '../../assets/f5.svg';
+import f6Img from '../../assets/f6.svg';
+import f7Img from '../../assets/f7.svg';
+import f8Img from '../../assets/f8.svg';
 
 interface ResultItem {
-  image: string;
+  beforeImage: string;
+  afterImage: string;
   concern: string;
   duration: string;
 }
@@ -14,22 +19,26 @@ interface ResultItem {
 export const ResultsShowcase: React.FC = () => {
   const resultsData: ResultItem[] = [
     {
-      image: f1Img,
+      beforeImage: f1Img,
+      afterImage: f2Img,
       concern: 'Gaps',
       duration: '8 months'
     },
     {
-      image: f2Img,
+      beforeImage: f3Img,
+      afterImage: f4Img,
       concern: 'Crooked Teeth',
       duration: '8 months'
     },
     {
-      image: f3Img,
+      beforeImage: f5Img,
+      afterImage: f6Img,
       concern: 'Open Bite',
       duration: '8 months'
     },
     {
-      image: f4Img,
+      beforeImage: f7Img,
+      afterImage: f8Img,
       concern: 'Protruding Teeth',
       duration: '8 months'
     }
@@ -45,9 +54,14 @@ export const ResultsShowcase: React.FC = () => {
             <div className="whistle-result-card" key={index}>
               <div className="whistle-result-img-wrapper">
                 <img 
-                  src={item.image} 
+                  src={item.beforeImage} 
                   className="whistle-result-img" 
-                  alt={`Before and After treatment for ${item.concern}`} 
+                  alt={`Before treatment for ${item.concern}`} 
+                />
+                <img 
+                  src={item.afterImage} 
+                  className="whistle-result-img" 
+                  alt={`After treatment for ${item.concern}`} 
                 />
               </div>
               <div className="whistle-result-details">

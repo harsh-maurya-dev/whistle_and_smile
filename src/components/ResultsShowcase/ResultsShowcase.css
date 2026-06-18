@@ -30,7 +30,7 @@
 
 /* Card item */
 .whistle-result-card {
-  background-color: #ffffff;
+  background-color: #f0f7ff;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   overflow: hidden;
@@ -47,15 +47,24 @@
 
 .whistle-result-img-wrapper {
   width: 100%;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  gap: 8px;
+  padding: 12px 12px 0 12px;
+  background-color: #f0f7ff;
+  box-sizing: border-box;
 }
 
 .whistle-result-img {
-  width: 100%;
-  height: auto;
+  width: calc(50% - 4px);
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 8px;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.whistle-result-card:hover .whistle-result-img {
+  transform: scale(1.02);
 }
 
 .whistle-result-details {

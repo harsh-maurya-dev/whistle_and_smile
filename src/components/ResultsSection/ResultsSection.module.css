@@ -1,0 +1,149 @@
+/* ResultsSection.module.css */
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1A2E;
+  margin: 0 0 40px 0;
+}
+
+/* Card row scrolling container */
+.cardRow {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 12px 4px 24px 4px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide default scrollbar but allow swipe on mobile */
+.cardRow::-webkit-scrollbar {
+  height: 6px;
+}
+.cardRow::-webkit-scrollbar-track {
+  background: #F9F9F9;
+  border-radius: 10px;
+}
+.cardRow::-webkit-scrollbar-thumb {
+  background: #E5E5E5;
+  border-radius: 10px;
+}
+.cardRow::-webkit-scrollbar-thumb:hover {
+  background: #6C63FF;
+}
+
+/* Individual Card */
+.card {
+  flex: 0 0 260px;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.05);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  border: 1px solid #E5E5E5;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26, 26, 46, 0.1);
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background-color: #F9F9F9;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.label {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1A1A2E;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.subLabel {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #555555;
+  margin: 0;
+}
+
+/* Skeleton loader cards */
+.skeleton {
+  flex: 0 0 260px;
+  height: 356px;
+  background: linear-gradient(90deg, #F3F3F3 25%, #E5E5E5 50%, #F3F3F3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Error alert state styling */
+.errorMsg {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #EF4444;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* ========================================================
+   Responsive Media Queries
+   ======================================================== */
+@media (min-width: 769px) {
+  .cardRow {
+    justify-content: center;
+    flex-wrap: wrap; /* Grid wrap on desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .cardRow {
+    justify-content: flex-start;
+  }
+}

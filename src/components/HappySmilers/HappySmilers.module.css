@@ -1,0 +1,160 @@
+/* HappySmilers.module.css */
+.section {
+  width: 100%;
+  background-color: #F9F9F9; /* Light grey section background */
+  padding: 80px 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1A2E;
+  margin: 0 0 40px 0;
+}
+
+.cardRow {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 12px 4px 24px 4px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hide scrollbar by default, style active scroll thumb */
+.cardRow::-webkit-scrollbar {
+  height: 6px;
+}
+.cardRow::-webkit-scrollbar-track {
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+.cardRow::-webkit-scrollbar-thumb {
+  background: #E5E5E5;
+  border-radius: 10px;
+}
+.cardRow::-webkit-scrollbar-thumb:hover {
+  background: #6C63FF;
+}
+
+/* Testimonial Card */
+.card {
+  flex: 0 0 210px;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.03);
+  text-align: center;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+}
+
+/* Portrait photo container */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.85 / 1; /* slightly tall */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background-color: #F9F9F9;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Purple overlay banner at the bottom of the image */
+.overlayBanner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #6C63FF; /* brand purple */
+  padding: 8px 4px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.overlayText {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.8px;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* User name below the card */
+.name {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A2E;
+  margin: 0;
+  text-align: center;
+}
+
+/* Skeleton loader cards */
+.skeleton {
+  flex: 0 0 210px;
+  height: 295px;
+  background: linear-gradient(90deg, #F3F3F3 25%, #E5E5E5 50%, #F3F3F3 75%);
+  background-size: 200% 100%;
+  animation: smiler-shimmer 1.5s infinite;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+}
+
+@keyframes smiler-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.errorMsg {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #EF4444;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* ========================================================
+   Responsive Media Queries
+   ======================================================== */
+@media (min-width: 769px) {
+  .cardRow {
+    justify-content: center;
+    flex-wrap: nowrap; /* keep side-by-side without wrap to match horizontal row of 5 cards */
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .cardRow {
+    justify-content: flex-start;
+  }
+}

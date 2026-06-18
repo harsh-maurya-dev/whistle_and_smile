@@ -13,6 +13,7 @@
   grid-template-columns: 1.1fr 0.9fr; /* Doctor image left, text content right */
   gap: 64px;
   align-items: center;
+  flex-direction: row-reverse;
 }
 
 /* Image styling */

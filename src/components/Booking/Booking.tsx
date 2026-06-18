@@ -51,7 +51,7 @@ export const Booking: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
 
@@ -87,10 +87,49 @@ export const Booking: React.FC = () => {
 
     setFormStatus('loading');
 
-    // Simulate API request
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1200);
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setErrorMsg('Web3Forms access key is not configured. Please add VITE_WEB3FORMS_ACCESS_KEY to your .env file.');
+      setFormStatus('idle');
+      return;
+    }
+
+    const payload: Record<string, string> = {
+      access_key: accessKey,
+      subject: `New Whistle Booking: ${bookingType === 'home' ? 'Home' : 'Clinic'} Scan Request`,
+      from_name: 'Whistle Aligners Website',
+      name: name.trim(),
+      phone: `+91-${phone}`,
+      city: city.trim(),
+      booking_type: bookingType === 'home' ? 'Home Scan' : 'Clinic Scan',
+      preferred_date: date,
+    };
+
+    if (bookingType === 'home') {
+      payload.pincode = pincode;
+    } else {
+      payload.clinic_location = clinic;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormStatus('success');
+      } else {
+        setErrorMsg(result.message || 'Something went wrong. Please try again.');
+        setFormStatus('idle');
+      }
+    } catch (err) {
+      setErrorMsg('Network error. Please check your connection and try again.');
+      setFormStatus('idle');
+    }
   };
 
   return (
