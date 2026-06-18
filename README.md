@@ -3,6 +3,7 @@
 A single-page React application replicating the **Whistle Aligners** brand website, built with **React 19**, **TypeScript**, and **Vite**.
 
 > **Live on**: `http://localhost:8001` (after running locally)
+> **Live on**: `https://whistle-and-smile-alpha.vercel.app/` (Deployed)
 
 ---
 
