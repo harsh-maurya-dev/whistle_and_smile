@@ -1,0 +1,302 @@
+/* Process Styles */
+.whistle-process-section {
+  width: 100%;
+  background-color: #f3f6fc; /* matching background of details section for high contrast block coding */
+  padding: 80px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.whistle-process-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.whistle-process-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas:
+    "title title"
+    "steps video";
+  gap: 32px 64px;
+  align-items: start;
+}
+
+.whistle-process-title {
+  grid-area: title;
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin: 0;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+/* Steps list */
+.whistle-process-steps {
+  grid-area: steps;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-top: 10px;
+}
+
+.whistle-step-item {
+  display: flex;
+  align-items: start;
+  position: relative;
+}
+
+/* Number Node */
+.whistle-step-node {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #e0f2fe; /* Light sky blue background */
+  border: 3.5px solid #bfdbfe; /* Accent border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-dark);
+  flex-shrink: 0;
+  margin-right: 20px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(191, 219, 254, 0.2);
+}
+
+/* Dashed vertical connector line */
+.whistle-step-connector {
+  position: absolute;
+  left: 22px;
+  top: 46px;
+  bottom: -40px;
+  border-left: 2px dashed #bfdbfe;
+  z-index: 1;
+}
+
+.whistle-step-item:last-child .whistle-step-connector {
+  display: none; /* hide dashed line on final wear node */
+}
+
+.whistle-step-content {
+  text-align: left;
+}
+
+.whistle-step-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.whistle-step-desc {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ========================================================
+   Video Section Layout
+   ======================================================== */
+.whistle-process-video {
+  grid-area: video;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.whistle-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding-top: 120%; /* 4:5 Portrait vertical video aspect ratio */
+  border-radius: 20px;
+  overflow: hidden;
+  border: 8px solid var(--whistle-purple); /* Solid framing matching mockup */
+  box-shadow: 0 12px 36px rgba(143, 98, 223, 0.2);
+  background-color: #1a1625;
+}
+
+/* Poster Frame */
+.whistle-video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+/* Overlay gradient inside poster */
+.whistle-video-poster::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30, 27, 41, 0.5) 0%, rgba(143, 98, 223, 0.2) 100%);
+  z-index: 1;
+}
+
+/* Play button overlay */
+.whistle-play-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: whistle-pulsing-play 2s infinite;
+}
+
+.whistle-video-poster:hover .whistle-play-btn {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.play-triangle {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+  margin-left: 4px; /* offset triangle slightly to look perfectly centered */
+}
+
+/* Iframe */
+.whistle-video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 3;
+}
+
+/* Pulse animation for play button */
+@keyframes whistle-pulsing-play {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+@media (max-width: 1024px) {
+  .whistle-process-section {
+    padding: 60px 20px;
+  }
+
+  .whistle-process-inner {
+    gap: 32px 40px;
+  }
+
+  .whistle-process-title {
+    font-size: 36px;
+  }
+
+  .whistle-video-wrapper {
+    max-width: 330px;
+  }
+}
+
+/* Mobile Stacked Layout (< 768px) */
+@media (max-width: 768px) {
+  .whistle-process-section {
+    padding: 40px 16px;
+  }
+
+  /* Stack items Title -> Video -> Steps */
+  .whistle-process-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "video"
+      "steps";
+    gap: 28px;
+  }
+
+  .whistle-process-title {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .whistle-process-video {
+    justify-content: center;
+  }
+
+  .whistle-video-wrapper {
+    max-width: 320px;
+  }
+
+  .whistle-process-steps {
+    gap: 28px;
+    padding-top: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .whistle-step-node {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    font-size: 15px;
+    border-width: 2.5px;
+  }
+
+  .whistle-step-connector {
+    left: 19px;
+    top: 40px;
+    bottom: -32px;
+  }
+
+  .whistle-step-title {
+    font-size: 18px;
+  }
+
+  .whistle-step-desc {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whistle-process-title {
+    font-size: 24px;
+  }
+
+  .whistle-video-wrapper {
+    max-width: 100%;
+    aspect-ratio: 4/5;
+  }
+}

@@ -1,0 +1,133 @@
+/* ProductDetails Styles */
+.whistle-details-section {
+  width: 100%;
+  background-color: #f3f6fc; /* Light blue-ish background section */
+  padding: 80px 24px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.whistle-details-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-areas:
+    "title card"
+    "para1 card"
+    "para2 card";
+  align-items: start;
+  gap: 10px 60px;
+}
+
+.whistle-details-title {
+  grid-area: title;
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin: 0 0 10px 0;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+.whistle-details-para1 {
+  grid-area: para1;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  text-align: left;
+  margin: 0 0 16px 0;
+}
+
+.whistle-details-para2 {
+  grid-area: para2;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  text-align: left;
+  margin: 0;
+}
+
+.whistle-details-card-box {
+  grid-area: card;
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  width: 100%;
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Tablet & Landscape (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .whistle-details-section {
+    padding: 60px 20px;
+  }
+
+  .whistle-details-inner {
+    gap: 10px 32px;
+  }
+
+  .whistle-details-title {
+    font-size: 36px;
+  }
+
+  .whistle-details-para1 {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Stacking Layout (< 768px) */
+@media (max-width: 768px) {
+  .whistle-details-section {
+    padding: 40px 16px;
+  }
+
+  /* Re-order items on mobile: Title -> Para 1 -> Card -> Para 2 */
+  .whistle-details-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "para1"
+      "card"
+      "para2";
+    gap: 20px;
+  }
+
+  .whistle-details-title {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+
+  .whistle-details-para1 {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .whistle-details-para2 {
+    font-size: 13.5px;
+    text-align: center;
+    margin-top: 8px;
+    padding: 0 8px;
+  }
+
+  .whistle-details-card-box {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .whistle-details-title {
+    font-size: 24px;
+  }
+}

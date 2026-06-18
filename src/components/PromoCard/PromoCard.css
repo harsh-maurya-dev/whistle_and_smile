@@ -1,0 +1,221 @@
+/* PromoCard Styles */
+.whistle-promo-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px 24px;
+}
+
+.whistle-clove-card-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.whistle-clove-card {
+  width: 100%;
+  background-color: #f0f7ff; /* Very soft premium blue-tint background */
+  border-radius: 16px;
+  padding: 36px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+  box-shadow: 0 4px 20px rgba(240, 247, 255, 0.5);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whistle-clove-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(219, 234, 254, 0.7);
+}
+
+.whistle-clove-text {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.35;
+  text-align: left;
+  max-width: 680px;
+}
+
+.whistle-clove-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.whistle-clove-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.whistle-clove-link {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--whistle-purple);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.whistle-clove-link:hover {
+  color: var(--whistle-purple-hover);
+}
+
+.whistle-clove-caret {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.whistle-clove-link:hover .whistle-clove-caret {
+  transform: translateY(2px);
+}
+
+/* ========================================================
+   Marquee Slider Style
+   ======================================================== */
+.whistle-marquee-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #d2f4d6 0%, #d2eff6 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.whistle-marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: whistle-marquee-scroll-loop 24s linear infinite;
+  padding-left: 0;
+}
+
+/* Pause scroll marquee on hover */
+.whistle-marquee-bar:hover .whistle-marquee-track {
+  animation-play-state: paused;
+}
+
+.whistle-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #1e1b29;
+  padding: 0 30px;
+}
+
+.whistle-marquee-item .highlight-bold {
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* Bullet divider */
+.whistle-marquee-divider {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--whistle-purple);
+  opacity: 0.5;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+/* Infinite sliding keyframes */
+@keyframes whistle-marquee-scroll-loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Shifts halfway (covering precisely one copy of items) */
+  }
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Tablet & Smaller Layout (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .whistle-clove-card {
+    padding: 30px 36px;
+    gap: 24px;
+  }
+
+  .whistle-clove-text {
+    font-size: 20px;
+  }
+
+  .whistle-clove-logo {
+    height: 52px;
+  }
+}
+
+/* Mobile Layout (< 768px) */
+@media (max-width: 768px) {
+  .whistle-promo-section {
+    padding: 16px 16px;
+  }
+
+  .whistle-clove-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+
+  .whistle-clove-text {
+    font-size: 18px;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  /* Mobile footer row of logo and link side-by-side */
+  .whistle-clove-aside {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+    gap: 0;
+  }
+
+  .whistle-clove-logo {
+    height: 44px;
+  }
+
+  .whistle-clove-link {
+    font-size: 14px;
+  }
+
+  .whistle-marquee-item {
+    font-size: 13.5px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whistle-clove-text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .whistle-clove-logo {
+    height: 38px;
+  }
+}

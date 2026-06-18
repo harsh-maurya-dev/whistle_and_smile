@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --whistle-purple: #8F62DF;
+  --whistle-purple-hover: #7b4fc8;
+  --whistle-purple-light: #f3e8ff;
+  --whistle-green: #2e7d32;
+  --text-dark: #1e1b29;
+  --text-gray: #4b5563;
+  --font-sans: 'Instrument Sans', sans-serif;
+  --font-heading: 'Instrument Sans', sans-serif;
+}
+
+/* Whistle App wrapper */
+.whistle-app {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.whistle-app * {
+  box-sizing: border-box;
+}
+
+/* Header */
+.whistle-header {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 14px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.whistle-header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.whistle-logo-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.whistle-logo-text {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--whistle-purple);
+  letter-spacing: -0.5px;
+  text-transform: lowercase;
+}
+
+.whistle-logo-subtext {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--whistle-purple);
+  letter-spacing: 2px;
+  margin-top: 2px;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+
+.whistle-call-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--whistle-purple);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(143, 98, 223, 0.2);
+}
+
+.whistle-call-btn:hover {
+  background-color: var(--whistle-purple-hover);
+  transform: scale(1.05);
+}
+
+.whistle-call-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Offer Bar */
+.whistle-offer-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #d2f4d6 0%, #d2eff6 100%);
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.1px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.whistle-offer-bar .old-price {
+  text-decoration: line-through;
+  color: #6b7280;
+  margin-right: 4px;
+}
+
+.whistle-offer-bar .new-price {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Hero Banner Section */
+.whistle-hero {
+  width: 100%;
+  background: radial-gradient(85% 85% at 50% 50%, #f7f5ff 0%, #f4f6fc 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Subtle background wave pattern representation */
+.whistle-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(circle at 100% 150%, var(--whistle-purple) 24%, transparent 24%),
+                    radial-gradient(circle at 0% 150%, var(--whistle-purple) 24%, transparent 24%),
+                    radial-gradient(circle at 50% 100%, var(--whistle-purple) 10%, transparent 10%);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.whistle-hero-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  min-height: 380px;
+  position: relative;
+}
+
+.whistle-hero-content {
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.whistle-hero-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  letter-spacing: -1px;
+}
+
+.whistle-hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-gray);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.whistle-hero-subtitle .highlight-purple {
+  color: var(--whistle-purple);
+  font-weight: 700;
+}
+
+.whistle-hero-image-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+  align-self: end;
+}
+
+.whistle-hero-img {
+  max-height: 380px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  z-index: 1;
+  transform: translateY(1px); /* avoid pixel gaps at bottom */
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Tablet Portrait (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .whistle-hero-inner {
+    grid-template-columns: 1.2fr 0.8fr;
+    min-height: 340px;
+  }
+
+  .whistle-hero-title {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .whistle-hero-subtitle {
+    font-size: 18px;
+  }
+
+  .whistle-hero-img {
+    max-height: 320px;
+  }
+}
+
+/* Mobile landscape and tablet Portrait small (max-width: 768px) */
+@media (max-width: 768px) {
+  .whistle-header {
+    padding: 12px 16px;
+  }
+
+  .whistle-logo-text {
+    font-size: 24px;
+  }
+
+  .whistle-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 16px;
+    min-height: auto;
+  }
+
+  .whistle-hero-content {
+    padding: 32px 0 20px 0;
+    align-items: center;
+  }
+
+  .whistle-hero-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+    max-width: 480px;
+  }
+
+  .whistle-hero-subtitle {
+    font-size: 16px;
+    max-width: 420px;
+  }
+
+  .whistle-hero-image-container {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .whistle-hero-img {
+    max-height: 280px;
+    width: 85%;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .whistle-offer-bar {
+    font-size: 11.5px;
+    padding: 6px 12px;
+  }
+
+  .whistle-hero-content {
+    padding: 24px 0 16px 0;
+  }
+
+  .whistle-hero-title {
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .whistle-hero-subtitle {
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+
+  .whistle-hero-img {
+    max-height: 240px;
+    width: 100%;
+  }
+}

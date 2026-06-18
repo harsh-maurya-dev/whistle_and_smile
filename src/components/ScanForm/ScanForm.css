@@ -1,0 +1,391 @@
+/* ScanForm stylesheet */
+.whistle-form-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 50px 24px;
+}
+
+.whistle-form-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whistle-form-question {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Radio buttons alignment */
+.whistle-radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.whistle-radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.whistle-radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom Radio Indicator */
+.whistle-radio-custom {
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #9ca3af;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+/* Checked state for radio indicator */
+.whistle-radio-label:hover .whistle-radio-custom {
+  border-color: var(--whistle-purple);
+}
+
+.whistle-radio-input:checked ~ .whistle-radio-custom {
+  border-color: var(--text-dark);
+  border-width: 1.5px;
+}
+
+.whistle-radio-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--text-dark);
+}
+
+.whistle-radio-input:checked ~ .whistle-radio-custom::after {
+  display: block;
+}
+
+/* Inline row wrapper for desktop */
+.whistle-form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+/* Form element sizing */
+.whistle-input-container {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.whistle-phone-container {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.whistle-button-container {
+  flex: 0 0 auto;
+  min-width: 240px;
+}
+
+/* Outline Floating inputs */
+.whistle-floating-label-group {
+  position: relative;
+}
+
+.whistle-input-field {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  padding: 15px 16px;
+  color: var(--text-dark);
+  background: #ffffff;
+  border: 1px solid #c8cbd0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whistle-input-field:focus {
+  border-color: var(--whistle-purple);
+}
+
+/* Floating label styling */
+.whistle-floating-label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-size: 14px;
+  color: #9ca3af;
+  background-color: #ffffff;
+  padding: 0 6px;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+/* Floating label movement when input is active */
+.whistle-input-field:focus ~ .whistle-floating-label,
+.whistle-input-field:not(:placeholder-shown) ~ .whistle-floating-label {
+  top: -8px;
+  font-size: 11px;
+  color: #888888;
+  font-weight: 500;
+}
+
+/* Highlight label on focus */
+.whistle-input-field:focus ~ .whistle-floating-label {
+  color: var(--whistle-purple);
+}
+
+/* Special Phone layout */
+.whistle-phone-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.whistle-phone-prefix {
+  position: absolute;
+  left: 14px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: #111827;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.whistle-phone-field {
+  padding-left: 48px; /* Offset text to make room for prefix */
+}
+
+/* Submit Button */
+.whistle-submit-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #c7b2f4;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.1px;
+  box-shadow: 0 4px 10px rgba(199, 178, 244, 0.2);
+}
+
+.whistle-submit-btn:hover {
+  background-color: #bfa8ed;
+}
+
+.whistle-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.whistle-submit-btn:disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Consent Checkbox underneath input fields */
+.whistle-consent-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 2px;
+  margin-top: 10px;
+}
+
+.whistle-consent-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: #888888;
+  line-height: 1.4;
+  text-align: left;
+  user-select: none;
+}
+
+.whistle-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom Checkbox Design */
+.whistle-checkbox-custom {
+  height: 17px;
+  width: 17px;
+  background-color: #ffffff;
+  border: 1.5px solid #b3b3b3;
+  border-radius: 4px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  position: relative;
+  margin-top: 1px;
+  transition: all 0.2s ease;
+}
+
+.whistle-consent-label:hover .whistle-checkbox-custom {
+  border-color: var(--whistle-purple);
+}
+
+.whistle-checkbox-input:checked ~ .whistle-checkbox-custom {
+  background-color: var(--whistle-purple);
+  border-color: var(--whistle-purple);
+}
+
+/* Checkmark check vector */
+.whistle-checkbox-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.whistle-checkbox-input:checked ~ .whistle-checkbox-custom::after {
+  display: block;
+}
+
+/* Feedback alert / success feedback modal styles */
+.whistle-alert-success {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: inline-block;
+  max-width: 500px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Tablet & Smaller Layout */
+@media (max-width: 1024px) {
+  .whistle-form-section {
+    padding: 40px 20px;
+  }
+}
+
+/* Mobile Layout (< 768px) */
+@media (max-width: 768px) {
+  .whistle-form-section {
+    padding: 30px 16px;
+  }
+
+  .whistle-form-question {
+    font-size: 21px;
+    margin-bottom: 16px;
+  }
+
+  .whistle-radio-group {
+    margin-bottom: 28px;
+  }
+
+  /* Form row elements stack vertically */
+  .whistle-form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .whistle-input-container,
+  .whistle-phone-container {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .whistle-button-container {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .whistle-consent-wrapper {
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  /* In mobile, button is positioned at the very bottom of the stacked layout */
+  /* We will achieve this order naturally in HTML or CSS flexbox ordering */
+  .whistle-form-row {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .whistle-input-container { order: 1; }
+  .whistle-phone-container { order: 2; }
+  .whistle-consent-wrapper { order: 3; }
+  .whistle-button-container { order: 4; }
+}
+
+@media (max-width: 480px) {
+  .whistle-form-question {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .whistle-consent-label {
+    font-size: 11px;
+  }
+}

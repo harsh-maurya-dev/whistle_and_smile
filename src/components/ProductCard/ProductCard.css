@@ -1,0 +1,199 @@
+/* ProductCard Styles */
+.whistle-product-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-areas: 
+    "title image"
+    "pricing image"
+    "checklist image"
+    "link image";
+  align-items: center;
+  gap: 10px 24px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.whistle-card-title {
+  grid-area: title;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0;
+  text-align: left;
+}
+
+.whistle-card-pricing-block {
+  grid-area: pricing;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.whistle-price-original {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.whistle-price-starting {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.whistle-price-starting .highlight-purple {
+  color: var(--whistle-purple);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.whistle-price-taxes {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Checklist */
+.whistle-card-checklist {
+  grid-area: checklist;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.whistle-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #4b5563;
+  font-weight: 500;
+  text-align: left;
+}
+
+.whistle-check-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #d1fae5;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.whistle-check-icon {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+/* Link */
+.whistle-card-link-wrapper {
+  grid-area: link;
+  text-align: left;
+}
+
+.whistle-card-link {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--whistle-purple);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.whistle-card-link:hover {
+  color: var(--whistle-purple-hover);
+  transform: translateX(4px);
+}
+
+/* Image */
+.whistle-card-image-wrapper {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whistle-card-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(143, 98, 223, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.whistle-product-card:hover .whistle-card-img {
+  transform: scale(1.04) rotate(2deg);
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Mobile Layout (< 768px) */
+@media (max-width: 768px) {
+  .whistle-product-card {
+    padding: 24px;
+    max-width: 100%;
+    grid-template-columns: 1fr 110px;
+    grid-template-areas: 
+      "title image"
+      "pricing image"
+      "checklist checklist"
+      "link link";
+    gap: 8px 12px;
+  }
+
+  .whistle-card-title {
+    font-size: 21px;
+  }
+
+  .whistle-price-starting .highlight-purple {
+    font-size: 18px;
+  }
+
+  .whistle-card-img {
+    max-height: 130px;
+  }
+
+  /* Make the Learn More link float to the right on mobile if it fits the design */
+  .whistle-card-link-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whistle-product-card {
+    grid-template-columns: 1fr 90px;
+    padding: 20px;
+  }
+
+  .whistle-card-title {
+    font-size: 19px;
+  }
+
+  .whistle-card-img {
+    max-height: 100px;
+  }
+}

@@ -1,0 +1,222 @@
+/* Footer Stylesheet */
+.whistle-footer {
+  width: 100%;
+  background-color: #131419; /* Deep dark slate background */
+  padding: 64px 24px;
+  color: #9ca3af;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.whistle-footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1.3fr 1.1fr 1fr; /* 4 columns on desktop */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Base column styles */
+.whistle-footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.whistle-footer-heading {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff; /* Crisp white titles */
+  margin: 0 0 20px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Quick Links column */
+.whistle-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.whistle-footer-link {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.whistle-footer-link:hover {
+  color: #ffffff;
+}
+
+.whistle-footer-link.highlight-scan {
+  color: var(--whistle-purple); /* Custom purple highlighting for free scan links */
+}
+
+.whistle-footer-link.highlight-scan:hover {
+  color: var(--whistle-purple-hover);
+}
+
+/* Contact Info Column */
+.whistle-footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.whistle-footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.whistle-footer-contact-link:hover {
+  color: #ffffff;
+}
+
+.whistle-footer-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Social media Column */
+.whistle-footer-social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.whistle-footer-social-svg {
+  width: 24px;
+  height: 24px;
+  fill: #9ca3af;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whistle-footer-social-icons a:hover .whistle-footer-social-svg {
+  fill: #ffffff;
+  transform: translateY(-3px) scale(1.08);
+}
+
+/* Legal Links Column */
+.whistle-footer-legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.whistle-footer-legal-link {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.whistle-footer-legal-link:hover {
+  color: #ffffff;
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Tablet & Smaller Layouts */
+@media (max-width: 1024px) {
+  .whistle-footer {
+    padding: 50px 24px;
+  }
+
+  .whistle-footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* Mobile Layouts (< 768px) */
+@media (max-width: 768px) {
+  .whistle-footer {
+    padding: 0; /* Let column borders run full-width screen-to-screen */
+  }
+
+  .whistle-footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .whistle-footer-col {
+    width: 100%;
+    padding: 32px 24px;
+    border-bottom: 1px solid #24262f; /* Horizontal divider lines between modules */
+    align-items: flex-start;
+  }
+
+  /* Adjust stacking order on mobile screen viewports */
+  .whistle-footer-links { order: 1; }
+  .whistle-footer-contact { order: 2; }
+  
+  .whistle-footer-legal { 
+    order: 3; 
+    align-items: center; /* Center horizontally in legal row */
+  }
+  
+  .whistle-footer-social { 
+    order: 4; 
+    border-bottom: none; /* No bottom border for final social row */
+    align-items: center; /* Center horizontally */
+    padding-bottom: 40px;
+  }
+
+  /* Make legal links row side-by-side on mobile views */
+  .whistle-footer-legal-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+  }
+
+  /* Centered social header & icons at bottom */
+  .whistle-footer-social .whistle-footer-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .whistle-footer-social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .whistle-footer-col {
+    padding: 24px 16px;
+  }
+
+  .whistle-footer-social {
+    padding-bottom: 32px;
+  }
+
+  .whistle-footer-legal-list {
+    gap: 20px;
+  }
+}

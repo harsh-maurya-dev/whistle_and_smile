@@ -1,0 +1,101 @@
+/* WhyUs Styles */
+.whistle-why-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 24px;
+}
+
+.whistle-why-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whistle-why-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0 0 48px 0;
+  letter-spacing: -1px;
+}
+
+/* Grid layout for desktop */
+.whistle-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .whistle-why-section {
+    padding: 60px 20px;
+  }
+
+  .whistle-why-title {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+
+  .whistle-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile swipe-scroll Snap layout (< 768px) */
+@media (max-width: 768px) {
+  .whistle-why-section {
+    padding: 40px 0; /* Clear horizontal padding for full-bleed scroll */
+  }
+
+  .whistle-why-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+    padding: 0 16px;
+  }
+
+  /* Slider container style */
+  .whistle-why-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px 16px 24px 16px; /* Bottom padding gives space for shadows */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+  }
+
+  /* Hide scrollbar Chrome/Safari */
+  .whistle-why-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mobile card width adjustments inside the slider */
+  .whistle-why-grid > * {
+    flex: 0 0 290px;
+    scroll-snap-align: start;
+  }
+
+  /* Add padding space after the last slide in flex container */
+  .whistle-why-grid::after {
+    content: '';
+    flex: 0 0 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whistle-why-title {
+    font-size: 24px;
+  }
+  
+  .whistle-why-grid > * {
+    flex: 0 0 270px;
+  }
+}
