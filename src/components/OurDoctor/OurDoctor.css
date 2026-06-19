@@ -23,6 +23,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  order: 2;
 }
 
 .whistle-doctor-img {
@@ -38,6 +39,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  order: 1;
 }
 
 .whistle-doctor-title {
@@ -122,12 +124,14 @@
   .whistle-doctor-image-wrapper {
     border-radius: 0; /* Sharp corners at mobile viewport edges */
     box-shadow: none;
+    order:1;
   }
 
   .whistle-doctor-details {
     padding: 40px 24px;
     align-items: stretch; /* Stretch CTA button to full container width */
     text-align: left;
+    order:2;
   }
 
   .whistle-doctor-title {

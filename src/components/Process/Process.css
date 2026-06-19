@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #f3f6fc; /* matching background of details section for high contrast block coding */
   padding: 80px 24px;
-  border-bottom: 1px solid #e2e8f0;
+  /* border-bottom: 1px solid #e2e8f0; */
 }
 
 .whistle-process-container {
